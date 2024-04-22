@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="./images/1123.png" type="image/x-icon">
+    <title>KitekatBank</title>
+  </head>
+  <body>
+    <!-- Шапка сайта -->
+    <header class="header">
+      <div class="logo">
+        <img src="./images/1123.png" alt="Логотип компании">
+        <p>KitekatBank</p>
+      </div>
+      <!-- Навигация по сайту -->
+      <nav class="header__navigation">
+        <a href="#main">Главная</a>
+        <a href="#onas">О нас</a>
+        <a href="#calc">Калькулятор</a>
+        <a href="tel:+79801874828">Личный кабинет</a>
+      </nav>
+    </header>
+    <!-- Основной блок банка -->
+    <section class="main" id="main">
+      <h2>KitekatBank – это акционерное <br>общество открытого типа.</h2>
+      <p>KitekatBank работает с физическими и с юридическими лицами. <br>В клиентской базе числятся более 1 миллиона предприятий. <br> 65% из них – крупные представители бизнеса РФ.</p>
+      <a href="">Оформить</a>
+    </section>
+    <!-- Основной раздел с кредитным калькулятором -->
+    <section class="loan-calc" id="calc">
+      <div class="container loan-calc__container">
+        <!-- Форма для ввода данных -->
+        <form action="#!" class="loan-calc__form" id="loan-calc-form">
+          <!-- Верхняя часть формы -->
+          <div class="loan-calc__top">
+            <!-- Заголовок калькулятора -->
+            <h1 class="loan-calc__title">Рассчитайте платеж по кредиту</h1>
+            <!-- Поля ввода данных -->
+            <div class="loan-calc__fields">
+              <!-- Поле ввода суммы кредита -->
+              <div class="loan-calc__input">
+                <label for="loan-amount">Сумма (рубли)</label>
+                <input
+                  type="number"
+                  name="loan-amount"
+                  id="loan-amount"
+                  value="100000"
+                  min="10000"
+                  max="1000000"
+                />
+              </div>
+              <!-- Поле ввода процентной ставки -->
+              <div class="loan-calc__input">
+                <label for="loan-precent">Процентная ставка</label>
+                <input
+                  type="number"
+                  name="loan-precent"
+                  id="loan-precent"
+                  value="10"
+                  step="0.1"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <!-- Поле ввода срока кредита -->
+              <div class="loan-calc__input">
+                <label for="loan-term">Срок (в месяцах)</label>
+                <input
+                  type="number"
+                  name="loan-term"
+                  id="loan-term"
+                  value="24"
+                  min="1"
+                  max="300"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Нижняя часть формы -->
+          <div class="loan-calc__bottom">
+            <!-- Информационные блоки с результатами расчета -->
+            <div class="loan-calc__info">
+              <!-- Блок с ежемесячным платежом -->
+              <div class="loan-calc__out">
+                <span>Ежемесячный платеж</span>
+                <output id="loan-payment">100</output>
+              </div>
+              <!-- Блок с суммой переплат -->
+              <div class="loan-calc__out">
+                <span>Сумма переплат</span>
+                <output id="loan-over">10000</output>
+              </div>
+              <!-- Блок с общей суммой выплаты по кредиту -->
+              <div class="loan-calc__out">
+                <span>Общая сумма</span>
+                <output id="loan-total">10000</output>
+              </div>
+              <!-- Кнопка для запуска расчета -->
+              <div class="loan-calc__btn">
+                <button id="loan-btn">Рассчитать</button>
+              </div>
+            </div>
+            <!-- Блок для отображения графика -->
+            <div class="loan-calc__chart">
+              <canvas id="loan-chart"></canvas>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Секция об банке -->
+    <section class="about" id="onas">
+      <div class="logo__1">
+        <img src="./images/1123.png" alt="логотип">
+      </div>
+      <p>
+        В чем преимущества KitekatBank перед другими банками? <br>
+        <br>
+        К явным плюсам его работы можно отнести:
+        огромное количество отделений, которые функционируют практически во всех населенных пунктах РФ;
+        большой опыт работы;
+        широко разветвленная сеть банкоматов, терминалов самообслуживания;
+        возможность круглосуточного доступа к услугам банка с помощью системы Сбербанк Онлайн;
+        наличие телефонов горячей линии, контактов для обратной связи.
+        KitekatBank – это акционерное общество открытого типа. Основная часть акций банка принадлежит Центральному Банку РФ (50% и одна голосующая акция). Остальные акции делят российские и международные инвесторы.
+      </p>
+    </section>
+    <!-- Подключение библиотеки Chart.js для отображения графиков -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Подключение JavaScript файла с основным функционалом -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
